@@ -6,6 +6,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
+import { useCreateRoom } from "@/http/use-create-rrom";
 
 const createRoomSchema = z.object({
     name: z.string().min(3, { message: 'Inclua no minimo  3 caracteres' }),
@@ -16,13 +17,20 @@ type CreateRoomFormData = z.infer<typeof createRoomSchema>
 
 export function CreateRoomForm() {
 
+    const { mutateAsync: createRoom } = useCreateRoom()
+
     const createRoomForm = useForm<CreateRoomFormData>({
         resolver: zodResolver(createRoomSchema),
+        defaultValues: {
+            name: '',
+            description: '',
+        }
     })
 
-    function handleCreateRoom(data:CreateRoomFormData) {
-        // biome-ignore lint/suspicious/noConsole: para de ser cvhato biome
-        console.log(data)
+    async function handleCreateRoom({ name, description }:CreateRoomFormData) {
+
+        await createRoom({ name, description })
+        createRoomForm.reset()
     }
 
     return (
