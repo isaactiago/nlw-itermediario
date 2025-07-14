@@ -19,6 +19,23 @@ Este projeto é uma aplicação web full-stack construída com as seguintes tecn
 *   **[React Router](https://reactrouter.com/):** Para gerenciamento de rotas.
 *   **[TanStack Query](https://tanstack.com/query/latest):** Para data fetching e caching.
 
+### Estilização
+
+*   **[Tailwind CSS](https://tailwindcss.com/):** Framework CSS utility-first para estilização.
+*   **[Radix UI](https://www.radix-ui.com/):** Biblioteca de componentes de interface de usuário acessíveis e não estilizados.
+*   **[Lucide React](https://lucide.dev/):** Biblioteca de ícones.
+*   **[clsx](https://github.com/lukeed/clsx):** Utilitário para construir strings de nomes de classe condicionalmente.
+*   **[tailwind-merge](https://github.com/dcastil/tailwind-merge):** Utilitário para mesclar classes do Tailwind CSS sem conflitos de estilo.
+*   **[class-variance-authority](https://cva.style/docs):** Biblioteca para criar uma API de variantes de classe.
+*   **[tw-animate-css](https://github.com/your-username/tw-animate-css):** Biblioteca para adicionar animações com CSS.
+
+Para instalar todas as dependências de estilização, execute o seguinte comando:
+
+```bash
+npm install @radix-ui/react-label @radix-ui/react-slot class-variance-authority clsx lucide-react tailwind-merge tailwindcss tw-animate-css
+```
+
+
 ## Padrões de Projeto
 
 *   **API:** O backend segue uma arquitetura de API RESTful.
